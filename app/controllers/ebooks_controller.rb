@@ -1,4 +1,5 @@
 class EbooksController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
   before_action :set_ebook, only: %i[ show edit update destroy ]
 
   # GET /ebooks or /ebooks.json
