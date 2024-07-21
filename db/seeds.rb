@@ -4,6 +4,7 @@ require "ffaker"
   Ebook.create!(
     title: FFaker::Book.title,
     author: FFaker::Book.author,
+    genre: FFaker::Book.genre,
     isbn: FFaker::Book.isbn,
     description: FFaker::Lorem.paragraph,
     price: rand(99.9..999.9).round(1)
