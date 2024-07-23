@@ -1,6 +1,9 @@
 require "ffaker"
 
-10.times do
+Ebook.destroy_all
+User.destroy_all
+
+5.times do
   Ebook.create!(
     title: FFaker::Book.title,
     author: FFaker::Book.author,
@@ -10,3 +13,8 @@ require "ffaker"
     price: rand(99.9..999.9).round(1)
   )
 end
+
+email = "user@mail.com"
+password = "000000"
+User.create(email: email, password: password, password_confirmation: password)
+
